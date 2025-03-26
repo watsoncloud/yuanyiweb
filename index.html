@@ -7,139 +7,110 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 50px;
-            background-color: #f0f0f0;
+            background-color: #f0f0f0; /* 设置灰色背景 */
+            margin: 0;
+            padding: 20px;
         }
-        .info-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .info-columns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; /* 列之间的间距 */
-        }
-        .info-item {
-            flex: 1 1 calc(50% - 10px); /* 每项占50%宽度，减去间隙 */
-            margin-bottom: 20px;
-        }
-        .info-item.full-width {
-            flex: 1 1 100%; /* 独占一行 */
-        }
-        .info-label {
-            font-weight: bold;
-            margin-bottom: 5px;
+        h1 {
+            text-align: center;
             color: #333;
         }
-        .info-content {
-            background-color: white;
+        .row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .column {
+            flex: 1;
+            margin: 0 5px;
+        }
+        .full-width {
+            flex: 100%;
+            margin: 0 5px;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .content {
+            background-color: white; /* 设置白色底板 */
             padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            white-space: nowrap; /* 禁止换行 */
-            overflow: hidden; /* 超出部分隐藏 */
-            text-overflow: ellipsis; /* 超出部分显示省略号 */
-            position: relative;
+            border-radius: 5px; /* 添加圆角 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
         }
-        .info-content:hover {
-            white-space: normal; /* 鼠标悬停时显示完整内容 */
-            overflow: visible; /* 显示全部内容 */
-            background-color: #fff;
-            z-index: 1; /* 确保内容显示在最上层 */
-        }
-        .highlight {
-            background-color: yellow; /* 高亮背景色 */
+        /* 单独为“备案证状态”设置样式 */
+        .half-width .content {
+            flex: 1; /* 占用一半宽度 */
+            max-width: 50%; /* 限制最大宽度为50% */
         }
     </style>
 </head>
 <body>
-    <div class="info-container">
-        <!-- 标题行 -->
-        <h1>项目信息</h1>
-        <!-- 两列信息 -->
-        <div class="info-columns">
-            <!-- 左一 -->
-            <div class="info-item">
-                <div class="info-label">项目代码</div>
-                <div class="info-content" id="projectCode">待填写</div>
-            </div>
-            <!-- 右一 -->
-            <div class="info-item">
-                <div class="info-label">项目名称</div>
-                <div class="info-content" id="projectName">待填写</div>
-            </div>
-            <!-- 单位名称（独占第二行） -->
-            <div class="info-item full-width">
-                <div class="info-label">单位名称</div>
-                <div class="info-content" id="companyName">待填写</div>
-            </div>
-            <!-- 左三 -->
-            <div class="info-item">
-                <div class="info-label">建设地点</div>
-                <div class="info-content" id="constructionLocation">待填写</div>
-            </div>
-            <!-- 右三 -->
-            <div class="info-item">
-                <div class="info-label">申报单位经济类型</div>
-                <div class="info-content" id="economicType">待填写</div>
-            </div>
-            <!-- 左四 -->
-            <div class="info-item">
-                <div class="info-label">项目所属行业</div>
-                <div class="info-content" id="industry">待填写</div>
-            </div>
-            <!-- 右四 -->
-            <div class="info-item">
-                <div class="info-label">项目总投资</div>
-                <div class="info-content" id="totalInvestment">待填写</div>
-            </div>
-            <!-- 左五 -->
-            <div class="info-item">
-                <div class="info-label">建设性质</div>
-                <div class="info-content" id="constructionType">待填写</div>
-            </div>
-            <!-- 右五 -->
-            <div class="info-item">
-                <div class="info-label">建设计划开工时间</div>
-                <div class="info-content" id="startDate">待填写</div>
-            </div>
-            <!-- 备案证状态（独占第六行） -->
-            <div class="info-item full-width">
-                <div class="info-label">备案证状态</div>
-                <div class="info-content" id="recordStatus">待填写</div>
-            </div>
-            <!-- 建设内容及规模（独占第七行） -->
-            <div class="info-item full-width">
-                <div class="info-label">建设内容及规模</div>
-                <div class="info-content" id="constructionDetails">待填写</div>
-            </div>
+    <h1>项目信息</h1>
+
+    <div class="row">
+        <div class="column">
+            <div class="label">项目代码</div>
+            <div class="content">2405-420506-04-05-162199</div>
+        </div>
+        <div class="column">
+            <div class="label">项目名称</div>
+            <div class="content">宜昌光可惠新能源科技有限公司租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目</div>
         </div>
     </div>
 
-    <script>
-        // 您可以通过修改下面的值来更新显示的内容
-        document.getElementById('projectCode').innerText = '2405-420506-04-05-162199';
-        document.getElementById('projectName').innerText = '宜昌光可惠新能源科技有限公司租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目';
-        document.getElementById('companyName').innerText = '宜昌光可惠新能源科技有限公司';
-        document.getElementById('constructionLocation').innerText = '湖北省宜昌市夷陵区三斗坪镇园艺村村民委员会';
-        document.getElementById('economicType').innerText = '私营企业';
-        document.getElementById('industry').innerText = '能源';
-        document.getElementById('totalInvestment').innerText = '11.09万元';
-        document.getElementById('constructionType').innerText = '新建';
-        document.getElementById('startDate').innerText = '2025-2';
-        document.getElementById('recordStatus').innerText = '有效';
-        document.getElementById('constructionDetails').innerText = '租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目，建设项目内容包括光伏组件、逆变器、配电箱、线路等';
+    <div class="row">
+        <div class="full-width">
+            <div class="label">单位名称</div>
+            <div class="content">宜昌光可惠新能源科技有限公司</div>
+        </div>
+    </div>
 
-        // 高亮显示函数
-        function highlightElement(elementId) {
-            const element = document.getElementById(elementId);
-            if (element) {
-                element.classList.add('highlight');
-            }
-        }
+    <div class="row">
+        <div class="column">
+            <div class="label">建设地点</div>
+            <div class="content">湖北省-宜昌市-夷陵区</div>
+        </div>
+        <div class="column">
+            <div class="label">申报单位经济类型</div>
+            <div class="content">私营企业</div>
+        </div>
+    </div>
 
-        // 示例：高亮“项目名称”
-        highlightElement('projectName');
-    </script>
+    <div class="row">
+        <div class="column">
+            <div class="label">项目所属行业</div>
+            <div class="content">能源</div>
+        </div>
+        <div class="column">
+            <div class="label">项目总投资</div>
+            <div class="content">11.08万元</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="label">建设性质</div>
+            <div class="content">新建</div>
+        </div>
+        <div class="column">
+            <div class="label">建设计划开工时间</div>
+            <div class="content">202405</div>
+        </div>
+    </div>
+
+    <div class="row half-width">
+        <div class="full-width">
+            <div class="label">备案证状态</div>
+            <div class="content">有效</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="full-width">
+            <div class="label">建设内容及规模</div>
+            <div class="content">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目，建设项目内容包括光伏组件、逆变器、配电箱、线路等</div>
+        </div>
+    </div>
 </body>
 </html>
