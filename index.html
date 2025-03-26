@@ -6,14 +6,23 @@
     <title>项目信息</title>
     <style>
         :root {
-            --row-spacing: 30px; /* 默认行距 */
-            --special-spacing: 50px; /* 单独控制单位名称与建设地点之间的行距 */
+            --row-spacing: 30px;
+            --special-spacing: 50px;
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #d3d3d3;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 800px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
@@ -22,25 +31,13 @@
         }
         .row {
             display: flex;
-            flex-wrap: wrap; /* 允许内容在小屏幕自动换行 */
+            flex-wrap: wrap;
             margin-bottom: var(--row-spacing);
         }
         .column {
             flex: 1;
-            margin: 0 5px;
-            min-width: 300px; /* 防止内容挤压变形 */
-        }
-        .column.left {
-            flex: 0.4;
-        }
-        .column.right {
-            flex: 0.6;
-        }
-        .full-width {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 5px;
-            width: 100%;
+            margin: 0 10px;
+            min-width: 300px;
         }
         .label {
             font-weight: bold;
@@ -51,104 +48,92 @@
             background-color: white;
             padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             min-height: 20px;
-            max-width: 100%; /* 让内容自适应屏幕 */
+            width: 100%;
+            border: 1px solid #ddd;
         }
-        /* 单独控制单位名称的行间距 */
-        .row.special-spacing {
-            margin-bottom: var(--special-spacing);
+        .full-width {
+            width: 100%;
         }
-
-        /* 使用 flex 设置单位名称的比例 */
-        .content.unit-name {
-            flex: 0.6;
-        }
-
-        /* 使用 flex 设置建设内容及规模的比例 */
-        .content.project-scale {
-            flex: 0.8;
-        }
-
-        /* 响应式适配：针对屏幕小于 768px（常见手机）的情况 */
         @media (max-width: 768px) {
             .row {
-                flex-direction: column; /* 让每个元素单独占一行 */
+                flex-direction: column;
             }
-            .column, .full-width {
-                flex: 100%;
-                min-width: auto;
+            .container {
+                width: 100%;
+                max-width: 800px;
             }
-            .content.unit-name, .content.project-scale {
-                flex: 1; /* 在手机上自动适应屏幕 */
-            }
+        }
+        /* 设置容器外部背景为灰色 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #d3d3d3;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
-    <h1>项目信息</h1>
-
-    <div class="row">
-        <div class="column left">
-            <div class="label">项目代码</div>
-            <div class="content">2405-420506-04-05-162199</div>
+    <div class="container">
+        <h1>项目信息</h1>
+        <div class="row">
+            <div class="column">
+                <div class="label">项目代码</div>
+                <div class="content">2405-420506-04-05-162199</div>
+            </div>
+            <div class="column">
+                <div class="label">项目名称</div>
+                <div class="content">宜昌光可惠新能源科技有限公司的光伏发电项目</div>
+            </div>
         </div>
-        <div class="column right">
-            <div class="label">项目名称</div>
-            <div class="content">宜昌光可惠新能源科技有限公司的光伏发电项目</div>
+        <div class="row full-width special-spacing">
+            <div class="label">单位名称</div>
+            <div class="content unit-name">宜昌光可惠新能源科技有限公司</div>
         </div>
-    </div>
-
-    <!-- 单独增加行间距的单位名称，并调整比例 -->
-    <div class="row full-width special-spacing">
-        <div class="label">单位名称</div>
-        <div class="content unit-name">宜昌光可惠新能源科技有限公司</div>
-    </div>
-
-    <div class="row">
-        <div class="column left">
-            <div class="label">建设地点</div>
-            <div class="content">湖北省-宜昌市-夷陵区</div>
+        <div class="row">
+            <div class="column">
+                <div class="label">建设地点</div>
+                <div class="content">湖北省-宜昌市-夷陵区</div>
+            </div>
+            <div class="column">
+                <div class="label">申报单位经济类型</div>
+                <div class="content">私营企业</div>
+            </div>
         </div>
-        <div class="column right">
-            <div class="label">申报单位经济类型</div>
-            <div class="content">私营企业</div>
+        <div class="row">
+            <div class="column">
+                <div class="label">项目所属行业</div>
+                <div class="content">能源</div>
+            </div>
+            <div class="column">
+                <div class="label">项目总投资</div>
+                <div class="content">11.08万元</div>
+            </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="column left">
-            <div class="label">项目所属行业</div>
-            <div class="content">能源</div>
+        <div class="row">
+            <div class="column">
+                <div class="label">建设性质</div>
+                <div class="content">新建</div>
+            </div>
+            <div class="column">
+                <div class="label">建设计划开工时间</div>
+                <div class="content">202405</div>
+            </div>
         </div>
-        <div class="column right">
-            <div class="label">项目总投资</div>
-            <div class="content">11.08万元</div>
+        <div class="row">
+            <div class="column">
+                <div class="label">备案证状态</div>
+                <div class="content">有效</div>
+            </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="column left">
-            <div class="label">建设性质</div>
-            <div class="content">新建</div>
+        <div class="row full-width">
+            <div class="label">建设内容及规模</div>
+            <div class="content project-scale">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设41.58KW分布式光伏发电项目。建设内容包括光伏组件、逆变器、配电箱、线路等</div>
         </div>
-        <div class="column right">
-            <div class="label">建设计划开工时间</div>
-            <div class="content">202405</div>
-        </div>
-    </div>
-
-    <div class="row half-width">
-        <div class="column left">
-            <div class="label">备案证状态</div>
-            <div class="content">有效</div>
-        </div>
-    </div>
-
-    <!-- 单独调整建设内容及规模的比例 -->
-    <div class="row full-width">
-        <div class="label">建设内容及规模</div>
-        <div class="content project-scale">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设41.58KW分布式光伏发电项目。建设内容包括光伏组件、逆变器、配电箱、线路等</div>
     </div>
 </body>
 </html>
