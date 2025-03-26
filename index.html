@@ -43,11 +43,12 @@
             padding: 10px;
             border-radius: 5px; /* 添加圆角 */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
+            width: 300px; /* 固定宽度，确保对齐 */
         }
         /* 单独为“备案证状态”设置样式 */
-        .half-width .content {
-            flex: 1; /* 占用一半宽度 */
-            max-width: 50%; /* 限制最大宽度为50% */
+        .row.half-width .content {
+            width: 300px; /* 与“项目代码”下的白色底板宽度一致 */
+            max-width: none; /* 取消最大宽度限制 */
         }
     </style>
 </head>
@@ -106,7 +107,7 @@
     </div>
 
     <div class="row half-width">
-        <div class="full-width">
+        <div class="column left">
             <div class="label">备案证状态</div>
             <div class="content">有效</div>
         </div>
