@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <meta name="viewport" content="width=800, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
     <title>项目信息</title>
     <style>
         /* 固定页面大小，设置灰色背景 */
@@ -14,17 +14,16 @@
             align-items: flex-start; /* 顶部对齐 */
             min-height: 100vh; /* 确保高度至少为视口高度 */
             background-color: #f0f0f0;
+            overflow: auto; /* 允许页面滚动 */
         }
         /* 容器样式 */
         .container {
-            width: 100%; /* 默认宽度为 100% */
-            max-width: 800px; /* 最大宽度为 800px */
+            width: 800px; /* 固定宽度 */
             background-color: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px; /* 顶部留白 */
             margin-bottom: 20px; /* 底部留白 */
-            overflow-x: auto; /* 允许水平滚动 */
         }
         /* 大标题样式 */
         h1 {
@@ -52,12 +51,10 @@
         /* 两列布局 */
         .row {
             display: flex;
-            flex-wrap: nowrap; /* 禁用换行 */
         }
         .column {
             flex: 1;
             padding: 5px;
-            min-width: 200px; /* 确保列的最小宽度 */
         }
     </style>
 </head>
