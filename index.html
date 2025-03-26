@@ -5,29 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目信息</title>
     <style>
+        :root {
+            --row-spacing: 30px; /* 默认行距 */
+            --special-spacing: 20px; /* 单独控制单位名称与建设地点之间的行距 */
+        }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* 设置灰色背景 */
+            background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
         }
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: var(--row-spacing);
         }
         .row {
             display: flex;
-            margin-bottom: 10px;
+            margin-bottom: var(--row-spacing);
         }
         .column {
             flex: 1;
             margin: 0 5px;
         }
         .column.left {
-            flex: 0.4; /* 左列稍窄 */
+            flex: 0.4;
         }
         .column.right {
-            flex: 0.6; /* 右列稍宽 */
+            flex: 0.4;
         }
         .full-width {
             flex: 100%;
@@ -39,16 +44,27 @@
             margin-bottom: 5px;
         }
         .content {
-            background-color: white; /* 设置白色底板 */
-            padding: 10px;
-            border-radius: 5px; /* 添加圆角 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
-            width: 300px; /* 固定宽度，确保对齐 */
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-height: 20px;
         }
-        /* 单独为“备案证状态”设置样式 */
-        .row.half-width .content {
-            width: 300px; /* 与“项目代码”下的白色底板宽度一致 */
-            max-width: none; /* 取消最大宽度限制 */
+        /* 单独控制单位名称的行间距 */
+        .row.special-spacing {
+            margin-bottom: var(--special-spacing);
+        }
+
+        /* 单独控制单位名称的白色底板大小 */
+        .content.unit-name {
+            width:1970px; /* 自定义单位名称底板宽度 */
+            height: 20px; /* 自定义单位名称底板高度 */
+        }
+
+        /* 单独控制建设内容及规模的白色底板大小 */
+        .content.project-scale {
+            width: 1970px; /* 自定义建设内容及规模底板宽度 */
+            height: auto; /* 高度自适应内容 */
         }
     </style>
 </head>
@@ -66,10 +82,11 @@
         </div>
     </div>
 
-    <div class="row">
+    <!-- 单独增加行间距的单位名称，并调整白色底板大小 -->
+    <div class="row full-width special-spacing">
         <div class="full-width">
             <div class="label">单位名称</div>
-            <div class="content">宜昌光可惠新能源科技有限公司</div>
+            <div class="content unit-name">宜昌光可惠新能源科技有限公司</div>
         </div>
     </div>
 
@@ -113,10 +130,11 @@
         </div>
     </div>
 
-    <div class="row">
+    <!-- 单独调整建设内容及规模的白色底板大小 -->
+    <div class="row full-width">
         <div class="full-width">
             <div class="label">建设内容及规模</div>
-            <div class="content">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设41.58KW分布式光伏发电项目。建设内容包括光伏组件、逆变器、配电箱、线路等</div>
+            <div class="content project-scale">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设41.58KW分布式光伏发电项目。建设内容包括光伏组件、逆变器、配电箱、线路等</div>
         </div>
     </div>
 </body>
