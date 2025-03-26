@@ -24,6 +24,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px; /* 顶部留白 */
             margin-bottom: 20px; /* 底部留白 */
+            overflow-x: auto; /* 允许水平滚动 */
         }
         /* 大标题样式 */
         h1 {
@@ -51,7 +52,7 @@
         /* 两列布局 */
         .row {
             display: flex;
-            flex-wrap: wrap; /* 允许换行 */
+            flex-wrap: nowrap; /* 禁用换行 */
         }
         .column {
             flex: 1;
