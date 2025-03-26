@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人信息</title>
+    <title>项目信息</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,11 +19,8 @@
             flex-wrap: wrap;
             gap: 20px; /* 列之间的间距 */
         }
-        .info-column {
-            flex: 1;
-            min-width: 300px; /* 每列的最小宽度 */
-        }
         .info-item {
+            flex: 1 1 calc(50% - 10px); /* 每项占50%宽度，减去间隙 */
             margin-bottom: 20px;
         }
         .info-label {
@@ -52,40 +49,80 @@
 <body>
     <div class="info-container">
         <!-- 标题行 -->
-        <h1>我的个人信息</h1>
+        <h1>项目信息</h1>
         <!-- 两列信息 -->
         <div class="info-columns">
-            <!-- 第一列 -->
-            <div class="info-column">
-                <div class="info-item">
-                    <div class="info-label">姓名</div>
-                    <div class="info-content" id="name">花生</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">年龄</div>
-                    <div class="info-content" id="age">25</div>
-                </div>
+            <!-- 左一 -->
+            <div class="info-item">
+                <div class="info-label">项目代码</div>
+                <div class="info-content" id="projectCode">待填写</div>
             </div>
-            <!-- 第二列 -->
-            <div class="info-column">
-                <div class="info-item">
-                    <div class="info-label">性别</div>
-                    <div class="info-content" id="gender">男</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">爱好</div>
-                    <div class="info-content" id="hobby">我喜欢摄影、旅行、编程、阅读、烹饪、运动等等，爱好非常广泛。</div>
-                </div>
+            <!-- 右一 -->
+            <div class="info-item">
+                <div class="info-label">项目名称</div>
+                <div class="info-content" id="projectName">待填写</div>
+            </div>
+            <!-- 左二 -->
+            <div class="info-item">
+                <div class="info-label">单位名称</div>
+                <div class="info-content" id="companyName">待填写</div>
+            </div>
+            <!-- 右二 -->
+            <div class="info-item">
+                <div class="info-label">建设地点</div>
+                <div class="info-content" id="constructionLocation">待填写</div>
+            </div>
+            <!-- 左三 -->
+            <div class="info-item">
+                <div class="info-label">申报单位经济类型</div>
+                <div class="info-content" id="economicType">待填写</div>
+            </div>
+            <!-- 右三 -->
+            <div class="info-item">
+                <div class="info-label">项目所属行业</div>
+                <div class="info-content" id="industry">待填写</div>
+            </div>
+            <!-- 左四 -->
+            <div class="info-item">
+                <div class="info-label">项目总投资</div>
+                <div class="info-content" id="totalInvestment">待填写</div>
+            </div>
+            <!-- 右四 -->
+            <div class="info-item">
+                <div class="info-label">建设类型</div>
+                <div class="info-content" id="constructionType">待填写</div>
+            </div>
+            <!-- 左五 -->
+            <div class="info-item">
+                <div class="info-label">建设计划开工时间</div>
+                <div class="info-content" id="startDate">待填写</div>
+            </div>
+            <!-- 右五 -->
+            <div class="info-item">
+                <div class="info-label">备案证状态</div>
+                <div class="info-content" id="recordStatus">待填写</div>
+            </div>
+            <!-- 左六 -->
+            <div class="info-item">
+                <div class="info-label">建设内容及规模</div>
+                <div class="info-content" id="constructionDetails">待填写</div>
             </div>
         </div>
     </div>
 
     <script>
         // 您可以通过修改下面的值来更新显示的内容
-        document.getElementById('name').innerText = '花生111';
-        document.getElementById('age').innerText = '25';
-        document.getElementById('gender').innerText = '男';
-        document.getElementById('hobby').innerText = '我喜欢摄影、旅行、编程、阅读、烹饪、运动等等，爱好非常广泛。';
+        document.getElementById('projectCode').innerText = '待填写';
+        document.getElementById('projectName').innerText = '宜昌光可惠新能源科技有限公司租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目';
+        document.getElementById('companyName').innerText = '宜昌光可惠新能源科技有限公司';
+        document.getElementById('constructionLocation').innerText = '湖北省宜昌市夷陵区三斗坪镇园艺村村民委员会';
+        document.getElementById('economicType').innerText = '私营企业';
+        document.getElementById('industry').innerText = '能源';
+        document.getElementById('totalInvestment').innerText = '11.09万元';
+        document.getElementById('constructionType').innerText = '新建';
+        document.getElementById('startDate').innerText = '2025-2';
+        document.getElementById('recordStatus').innerText = '有效';
+        document.getElementById('constructionDetails').innerText = '租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目，建设项目内容包括光伏组件、逆变器、配电箱、线路等';
     </script>
 </body>
 </html>
