@@ -23,6 +23,9 @@
             flex: 1 1 calc(50% - 10px); /* 每项占50%宽度，减去间隙 */
             margin-bottom: 20px;
         }
+        .info-item.full-width {
+            flex: 1 1 100%; /* 独占一行 */
+        }
         .info-label {
             font-weight: bold;
             margin-bottom: 5px;
@@ -44,6 +47,9 @@
             background-color: #fff;
             z-index: 1; /* 确保内容显示在最上层 */
         }
+        .highlight {
+            background-color: yellow; /* 高亮背景色 */
+        }
     </style>
 </head>
 <body>
@@ -62,48 +68,48 @@
                 <div class="info-label">项目名称</div>
                 <div class="info-content" id="projectName">待填写</div>
             </div>
-            <!-- 左二 -->
-            <div class="info-item">
+            <!-- 单位名称（独占第二行） -->
+            <div class="info-item full-width">
                 <div class="info-label">单位名称</div>
                 <div class="info-content" id="companyName">待填写</div>
             </div>
-            <!-- 右二 -->
+            <!-- 左三 -->
             <div class="info-item">
                 <div class="info-label">建设地点</div>
                 <div class="info-content" id="constructionLocation">待填写</div>
             </div>
-            <!-- 左三 -->
+            <!-- 右三 -->
             <div class="info-item">
                 <div class="info-label">申报单位经济类型</div>
                 <div class="info-content" id="economicType">待填写</div>
             </div>
-            <!-- 右三 -->
+            <!-- 左四 -->
             <div class="info-item">
                 <div class="info-label">项目所属行业</div>
                 <div class="info-content" id="industry">待填写</div>
             </div>
-            <!-- 左四 -->
+            <!-- 右四 -->
             <div class="info-item">
                 <div class="info-label">项目总投资</div>
                 <div class="info-content" id="totalInvestment">待填写</div>
             </div>
-            <!-- 右四 -->
+            <!-- 左五 -->
             <div class="info-item">
-                <div class="info-label">建设类型</div>
+                <div class="info-label">建设性质</div>
                 <div class="info-content" id="constructionType">待填写</div>
             </div>
-            <!-- 左五 -->
+            <!-- 右五 -->
             <div class="info-item">
                 <div class="info-label">建设计划开工时间</div>
                 <div class="info-content" id="startDate">待填写</div>
             </div>
-            <!-- 右五 -->
-            <div class="info-item">
+            <!-- 备案证状态（独占第六行） -->
+            <div class="info-item full-width">
                 <div class="info-label">备案证状态</div>
                 <div class="info-content" id="recordStatus">待填写</div>
             </div>
-            <!-- 左六 -->
-            <div class="info-item">
+            <!-- 建设内容及规模（独占第七行） -->
+            <div class="info-item full-width">
                 <div class="info-label">建设内容及规模</div>
                 <div class="info-content" id="constructionDetails">待填写</div>
             </div>
@@ -123,6 +129,17 @@
         document.getElementById('startDate').innerText = '2025-2';
         document.getElementById('recordStatus').innerText = '有效';
         document.getElementById('constructionDetails').innerText = '租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设27.72KW分布式光伏发电项目，建设项目内容包括光伏组件、逆变器、配电箱、线路等';
+
+        // 高亮显示函数
+        function highlightElement(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.classList.add('highlight');
+            }
+        }
+
+        // 示例：高亮“项目名称”
+        highlightElement('projectName');
     </script>
 </body>
 </html>
