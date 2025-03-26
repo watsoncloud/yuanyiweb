@@ -36,6 +36,16 @@
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            white-space: nowrap; /* 禁止换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            text-overflow: ellipsis; /* 超出部分显示省略号 */
+            position: relative;
+        }
+        .info-content:hover {
+            white-space: normal; /* 鼠标悬停时显示完整内容 */
+            overflow: visible; /* 显示全部内容 */
+            background-color: #fff;
+            z-index: 1; /* 确保内容显示在最上层 */
         }
     </style>
 </head>
@@ -64,7 +74,7 @@
                 </div>
                 <div class="info-item">
                     <div class="info-label">爱好</div>
-                    <div class="info-content" id="hobby">摄影、旅行、编程</div>
+                    <div class="info-content" id="hobby">我喜欢摄影、旅行、编程、阅读、烹饪、运动等等，爱好非常广泛。</div>
                 </div>
             </div>
         </div>
@@ -72,10 +82,10 @@
 
     <script>
         // 您可以通过修改下面的值来更新显示的内容
-        document.getElementById('name').innerText = '花生';
+        document.getElementById('name').innerText = '花生111';
         document.getElementById('age').innerText = '25';
         document.getElementById('gender').innerText = '男';
-        document.getElementById('hobby').innerText = '摄影、旅行、编程';
+        document.getElementById('hobby').innerText = '我喜欢摄影、旅行、编程、阅读、烹饪、运动等等，爱好非常广泛。';
     </script>
 </body>
 </html>
