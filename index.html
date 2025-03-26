@@ -7,7 +7,7 @@
     <style>
         :root {
             --row-spacing: 30px; /* 默认行距 */
-            --special-spacing: 20px; /* 单独控制单位名称与建设地点之间的行距 */
+            --special-spacing: 50px; /* 单独控制单位名称与建设地点之间的行距 */
         }
         body {
             font-family: Arial, sans-serif;
@@ -22,21 +22,25 @@
         }
         .row {
             display: flex;
+            flex-wrap: wrap; /* 允许内容在小屏幕自动换行 */
             margin-bottom: var(--row-spacing);
         }
         .column {
             flex: 1;
             margin: 0 5px;
+            min-width: 300px; /* 防止内容挤压变形 */
         }
         .column.left {
             flex: 0.4;
         }
         .column.right {
-            flex: 0.4;
+            flex: 0.6;
         }
         .full-width {
-            flex: 100%;
+            display: flex;
+            flex-wrap: wrap;
             margin: 0 5px;
+            width: 100%;
         }
         .label {
             font-weight: bold;
@@ -49,22 +53,35 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             min-height: 20px;
+            max-width: 100%; /* 让内容自适应屏幕 */
         }
         /* 单独控制单位名称的行间距 */
         .row.special-spacing {
             margin-bottom: var(--special-spacing);
         }
 
-        /* 单独控制单位名称的白色底板大小 */
+        /* 使用 flex 设置单位名称的比例 */
         .content.unit-name {
-            width:1970px; /* 自定义单位名称底板宽度 */
-            height: 20px; /* 自定义单位名称底板高度 */
+            flex: 0.6;
         }
 
-        /* 单独控制建设内容及规模的白色底板大小 */
+        /* 使用 flex 设置建设内容及规模的比例 */
         .content.project-scale {
-            width: 1970px; /* 自定义建设内容及规模底板宽度 */
-            height: auto; /* 高度自适应内容 */
+            flex: 0.8;
+        }
+
+        /* 响应式适配：针对屏幕小于 768px（常见手机）的情况 */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column; /* 让每个元素单独占一行 */
+            }
+            .column, .full-width {
+                flex: 100%;
+                min-width: auto;
+            }
+            .content.unit-name, .content.project-scale {
+                flex: 1; /* 在手机上自动适应屏幕 */
+            }
         }
     </style>
 </head>
@@ -82,12 +99,10 @@
         </div>
     </div>
 
-    <!-- 单独增加行间距的单位名称，并调整白色底板大小 -->
+    <!-- 单独增加行间距的单位名称，并调整比例 -->
     <div class="row full-width special-spacing">
-        <div class="full-width">
-            <div class="label">单位名称</div>
-            <div class="content unit-name">宜昌光可惠新能源科技有限公司</div>
-        </div>
+        <div class="label">单位名称</div>
+        <div class="content unit-name">宜昌光可惠新能源科技有限公司</div>
     </div>
 
     <div class="row">
@@ -108,7 +123,7 @@
         </div>
         <div class="column right">
             <div class="label">项目总投资</div>
-            <div class="content">11.09万元</div>
+            <div class="content">11.08万元</div>
         </div>
     </div>
 
@@ -119,7 +134,7 @@
         </div>
         <div class="column right">
             <div class="label">建设计划开工时间</div>
-            <div class="content">202502</div>
+            <div class="content">202405</div>
         </div>
     </div>
 
@@ -130,12 +145,10 @@
         </div>
     </div>
 
-    <!-- 单独调整建设内容及规模的白色底板大小 -->
+    <!-- 单独调整建设内容及规模的比例 -->
     <div class="row full-width">
-        <div class="full-width">
-            <div class="label">建设内容及规模</div>
-            <div class="content project-scale">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设41.58KW分布式光伏发电项目。建设内容包括光伏组件、逆变器、配电箱、线路等</div>
-        </div>
+        <div class="label">建设内容及规模</div>
+        <div class="content project-scale">租用宜昌市夷陵区三斗坪镇园艺村村民委员会屋顶建设41.58KW分布式光伏发电项目。建设内容包括光伏组件、逆变器、配电箱、线路等</div>
     </div>
 </body>
 </html>
