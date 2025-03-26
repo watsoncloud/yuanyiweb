@@ -8,28 +8,66 @@
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
+            background-color: #f0f0f0;
         }
-        .info {
+        .info-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .info-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* 列之间的间距 */
+        }
+        .info-column {
+            flex: 1;
+            min-width: 300px; /* 每列的最小宽度 */
+        }
+        .info-item {
             margin-bottom: 20px;
         }
-        .info label {
+        .info-label {
             font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .info-content {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <h1>我的个人信息</h1>
-    <div class="info">
-        <label>姓名：</label> <span id="name">花生</span>
-    </div>
-    <div class="info">
-        <label>年龄：</label> <span id="age">25</span>
-    </div>
-    <div class="info">
-        <label>性别：</label> <span id="gender">男</span>
-    </div>
-    <div class="info">
-        <label>爱好：</label> <span id="hobby">摄影、旅行、编程</span>
+    <div class="info-container">
+        <!-- 标题行 -->
+        <h1>我的个人信息</h1>
+        <!-- 两列信息 -->
+        <div class="info-columns">
+            <!-- 第一列 -->
+            <div class="info-column">
+                <div class="info-item">
+                    <div class="info-label">姓名</div>
+                    <div class="info-content" id="name">花生</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">年龄</div>
+                    <div class="info-content" id="age">25</div>
+                </div>
+            </div>
+            <!-- 第二列 -->
+            <div class="info-column">
+                <div class="info-item">
+                    <div class="info-label">性别</div>
+                    <div class="info-content" id="gender">男</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">爱好</div>
+                    <div class="info-content" id="hobby">摄影、旅行、编程</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
