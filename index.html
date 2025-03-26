@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人信息</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>我的个人信息</h1>
+    <div class="info">
+        <label>姓名：</label> <span id="name">花生</span>
+    </div>
+    <div class="info">
+        <label>年龄：</label> <span id="age">25</span>
+    </div>
+    <div class="info">
+        <label>性别：</label> <span id="gender">男</span>
+    </div>
+    <div class="info">
+        <label>爱好：</label> <span id="hobby">摄影、旅行、编程</span>
+    </div>
+
+    <script>
+        // 您可以通过修改下面的值来更新显示的内容
+        document.getElementById('name').innerText = '花生';
+        document.getElementById('age').innerText = '25';
+        document.getElementById('gender').innerText = '男';
+        document.getElementById('hobby').innerText = '摄影、旅行、编程';
+    </script>
+</body>
+</html>
